@@ -1,0 +1,27 @@
+<%- include ('../../partials/homenavbar.ejs') %>
+<%- include ('../../partials/header.ejs') %>
+
+<div class="container">
+    <div class="card mt-5">
+
+        <div class="card-header">
+            <h2>Efetue seu login!<h2>
+        </div>
+        <div class="card-body">
+            <form>
+                <input class="form-control" name="email" type="email" placeholder="email@example.com"><br>
+                <input class="form-control" name="password" type="password" placeholder="*******"><br>
+                <a class="btn btn-info" href="/admin/categories/">Login</a>
+                <a class="btn btn-dark" href="/">Cancelar</a>
+            </form>
+        </div>
+        <div class="card-header">
+            <h6>Não possui conta? <a href="/admin/users/create">Registre-se</a> </h6>
+        </div>
+
+
+    </div>
+
+</div>
+
+<%- include ('../../partials/footer.ejs') %>

@@ -1,0 +1,39 @@
+<%- include ('../../partials/navbar.ejs') %>
+<%- include ('../../partials/header.ejs') %>
+<div class="container">
+    <hr>
+    <h2>Skins</h2><br>
+    <a class="btn btn-dark" href="/admin/skins/new">Criar nova skin</a>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Imagem</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% skins.forEach(skin => { %>
+                <tr>
+                    <th><%= skin.id %></th>
+                    <th><%= skin.name %></th>
+                    <th><%= skin.category.name %></th>
+                    <th><%= skin.price %></th>
+                    <th><%= skin.imageUrl %></th>
+                    <th>
+                        <a class="btn btn-info" href="/admin/skin/edit/">Editar</a>
+                        <form method="POST" action="/admin/skin/delete" style="display: inline;" >
+                            <input type="hidden" name="id" value="<%= skin.id %>">  
+                            <button class="btn btn-danger">Deletar</button>
+                        </form>
+                    </th>
+                </tr>
+            <% }) %>
+        </tbody>
+</div>
+
+<%- include ('../../partials/footer.ejs') %>

@@ -1,0 +1,23 @@
+<%- include ('../../partials/navbar.ejs') %>
+<%- include ('../../partials/header.ejs') %>
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header"> 
+            <h2>Atualização de categoria</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/categories/edit/<%= category.id %>">
+                <p>Nome</p>
+                <input class="form-control" type="text" name="name" placeholder="Defina o nome/titulo da categoria" value="<%= category.name %>"><br>
+                <p>Altura da imagem</p>
+                <input class="form-control" type="number" name="imageHeight" placeholder="Defina a altura" value="<%= category.imageHeight %>"><br>
+                <p>Largura da imagem</p>
+                <input class="form-control" type="number" name="imageWidth" placeholder="Defina a largura" value="<%= category.imageWidth %>"><br>
+                <button class="btn btn-info">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ('../../partials/footer.ejs') %>

@@ -15,16 +15,6 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-
-//connection
-//    .authenticate()
-//    .then(()= > {
-//        console.log("conexao feita com sucesso")
-//    }).catch((error) => {
-//        console.log(error);
-//    })
-
-
 app.use("/",categoriesController);
 app.use("/",skinsController);
 app.use("/",usersController);

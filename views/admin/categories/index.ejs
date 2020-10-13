@@ -23,7 +23,7 @@
                     <th><%= category.imageHeight %></th>
                     <th><%= category.imageWidth %></th>
                     <th>
-                    <a class="btn btn-info" href="/admin/categories/edit/">Editar</a>
+                    <a class="btn btn-info" href="/admin/categories/edit/<%= category.id %>">Editar</a>
                     <form method="POST" action="/categories/delete" style="display: inline;" >
                         <input type="hidden" name="id" value="<%= category.id %>">  
                         <button class="btn btn-danger">Deletar</button>

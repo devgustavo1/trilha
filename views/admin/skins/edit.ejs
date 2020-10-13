@@ -1,0 +1,35 @@
+<%- include ('../../partials/navbar.ejs') %>
+<%- include ('../../partials/header.ejs') %>
+<div class="container">
+    <hr>
+    <div class="card">
+        <div class="card-header"> 
+            <h2>Atualização de Skins</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/admin/skins/edit/<%= skin.id %>">
+                <p>Nome:</p>
+                <input class="form-control" type="text" name="name" placeholder="Defina o nome/titulo da skin" value="<%= skin.name %>"><br>
+                <p>Preço:</p>
+                <input class="form-control" type="number" step=".01" name="price" placeholder="Defina o preço da skin" value="<%= skin.price %>"><br>
+                <p>Categoria:</p>
+                <select class="form-control"  name="categoryId">
+                    <% categories.forEach(category => { %>
+                        <% if (category.id == skin.category.id) { %>
+                            <option value= "<%= category.id %>" selected> <%= category.name %> </option> 
+                        <% } else { %>
+                            <option value= "<%= category.id %>"> <%= category.name %> </option>
+                        <% } %>
+                    <% }) %>
+                </select>
+                <p>Imagem:</p>
+                <img class="img-thumbnail mt-3" src='data:image/jpeg;base64,<%= img %>'/>
+                <input class="mt-3" type="file"><br>
+                <br>
+                <button class="btn btn-info">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include ('../../partials/footer.ejs') %>

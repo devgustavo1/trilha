@@ -25,7 +25,7 @@
                     <th><%= skin.price %></th>
                     <th><%= skin.imageUrl %></th>
                     <th>
-                        <a class="btn btn-info" href="/admin/skin/edit/">Editar</a>
+                        <a class="btn btn-info" href="/admin/skin/edit/<%= skin.id %>">Editar</a>
                         <form method="POST" action="/admin/skin/delete" style="display: inline;" >
                             <input type="hidden" name="id" value="<%= skin.id %>">  
                             <button class="btn btn-danger">Deletar</button>
